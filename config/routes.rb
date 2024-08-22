@@ -1,0 +1,6 @@
+Rails.application.routes.draw do
+  root "feed#index"
+
+  post "sign_up", to: "users#create"
+  get "sign_up", to: "users#new"
+end

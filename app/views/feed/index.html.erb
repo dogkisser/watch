@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Watch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "pico.min.css" %>
+    <%= stylesheet_link_tag "feed" %>
+
+    <%= turbo_include_tags %>
+
+    <% if current_user %>
+      <h1>Signed in :3</h1>
+      <%= turbo_stream_from current_user.id, "feed", channel: FeedChannel %>
+    <% end %>
+  </head>
+  <body>
+    <div id="overlay">
+      <div id="controls">
+        <div>
+          <h1>Enable fetishes</h1>
+          <div>
+            <label>
+              <input type="checkbox">
+              <span>One</span>
+            </label>
+
+            <label>
+            <input type="checkbox">
+            <span>Two</span>
+          </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= turbo_frame_tag "media-frame" do %>
+      <%= render "media", url: "https://static1.e621.net/data/f9/85/f9852595d4c404646a0e7dea7f9c396b.gif" %>
+    <% end %>
+    # %= render "xp" %>
+  </body>
+</html>
