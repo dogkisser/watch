@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "pico.min.css" %>
     <%= stylesheet_link_tag "feed" %>
 
+    <%= javascript_include_tag "feed" %>
+
     <%= turbo_include_tags %>
 
     <% if current_user %>
@@ -19,7 +21,10 @@
     <div id="overlay">
       <%= render "controls" %>
 
-      <%= render "xp" %>
+      <div id="points-bar">
+        <%= turbo_frame_tag "xp-frame" do %>
+        <% end %>
+      </div>
     </div>
 
     <% if !current_user %>

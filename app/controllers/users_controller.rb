@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
+    # TODO: there are warnings about unauthorised parameters (:authenticity_token and :commit) but
+    # for some reason Rails isn't doing its ParamsWrapper thing automatically like its supposed to
     params.permit(:username, :password, :password_confirmation)
   end
 end

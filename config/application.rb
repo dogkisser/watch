@@ -15,14 +15,5 @@ module Watch
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
-
-    config.good_job.enable_cron = true
-    config.good_job.cron = {
-      fetch_feed_media: {
-        cron: "every 5 minutes",
-        class: "FetchFeedMedia",
-        args: ["feral"],
-      },
-    }
   end
 end

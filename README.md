@@ -1,6 +1,5 @@
 # watch.horse.wang
 
-- [ ] watching the porn on screen earns n points
 - [ ] the longer you watch, the higher your multiplier
 - [ ] occasional engagement checks or points are forfeited
 - [ ] like 30m long really big multiplier for logging in at the same time in your daily streaks (forms habit)
@@ -32,9 +31,12 @@
 - [ ] lose points/mult for skipping porn
 - [ ] multiplier for playing videos with audio on
 - [ ] pause counting xp when tab is not focused
-- [ ] that "are you sure you want to close the tab" thing
 - [ ] a second small bar showing the time until a new piece of media is chosen
 - [ ] maybe upgrades can go towards how quickly new media is shown
+- [ ] send notifications
+- [ ] do that annoying flashing tab title thing "come back! xyz"
+- [x] watching the porn on screen earns n points
+- [x] that "are you sure you want to close the tab" thing
 
 not planned:
 
