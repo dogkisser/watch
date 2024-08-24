@@ -28,7 +28,7 @@
     </div>
 
     <% if !current_user %>
-      <%= render "register_modal" %>
+      <%= turbo_frame_tag "register_modal", src: new_user_path, target: '_top' %>
     <% end %>
 
     <%= turbo_frame_tag "media-frame" do %>
