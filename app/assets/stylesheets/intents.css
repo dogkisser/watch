@@ -1,0 +1,13 @@
+:root {
+    --danger-bg: var(--pico-color-red-500);
+    --danger-fg: var(--pico-color-red-50);
+    --danger-border: var(--pico-color-red-700);
+}
+
+article {
+    &.danger {
+        border: 1px solid var(--danger-border);
+        background: var(--danger-bg);
+        color: var(--danger-fg);
+    }
+}
