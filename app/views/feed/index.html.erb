@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
   <head>
     <title>Watch</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,33 +12,26 @@
     <%= turbo_include_tags %>
 
     <% if current_user %>
-      <h1>Signed in :3</h1>
       <%= turbo_stream_from current_user.id, "feed", channel: FeedChannel %>
     <% end %>
   </head>
   <body>
     <div id="overlay">
-      <div id="controls">
-        <div>
-          <h1>Enable fetishes</h1>
-          <div>
-            <label>
-              <input type="checkbox">
-              <span>One</span>
-            </label>
+      <%= render "controls" %>
 
-            <label>
-            <input type="checkbox">
-            <span>Two</span>
-          </label>
-          </div>
-        </div>
-      </div>
+      <%= render "xp" %>
     </div>
 
-    <%= turbo_frame_tag "media-frame" do %>
-      <%= render "media", url: "https://static1.e621.net/data/f9/85/f9852595d4c404646a0e7dea7f9c396b.gif" %>
+    <% if !current_user %>
+      <%= render "register_modal" %>
     <% end %>
-    # %= render "xp" %>
+
+    <%= turbo_frame_tag "media-frame" do %>
+      <%# I couldn't choose heheheh. maybe base it on aspect ratio %>
+      <%= render "media", url: [
+          "https://static1.e621.net/data/a1/84/a184f13e4e393a686cdf96b0a326fd24.gif",
+          "https://static1.e621.net/data/e5/3f/e53f8ed1162f174b9639a3eb95645aa8.gif"
+        ].sample %>
+    <% end %>
   </body>
 </html>

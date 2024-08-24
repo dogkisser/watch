@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   def create
-    begin
-      @user = User.new(user_params)
-      @user.save!
-
+    @user = User.new(user_params)
+    if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
-    rescue
-      render :new, status: :unprocessable_entity
+    else
+      flash[:errors] = @user.errors.full_messages
     end
+
+    redirect_to request.referer
   end
 
   def new
@@ -18,6 +17,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.permit(:username, :password, :password_confirmation)
   end
 end

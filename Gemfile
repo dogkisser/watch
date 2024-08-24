@@ -67,3 +67,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "good_job", "~> 4.2"
+
+gem "pg", "~> 1.5"

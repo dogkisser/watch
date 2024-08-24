@@ -1,5 +1,8 @@
 # watch.horse.wang
 
+- [ ] watching the porn on screen earns n points
+- [ ] the longer you watch, the higher your multiplier
+- [ ] occasional engagement checks or points are forfeited
 - [ ] like 30m long really big multiplier for logging in at the same time in your daily streaks (forms habit)
 - [ ] chill asmr beats to study to in the background
 - [ ] n points moves you up a level, levels are grouped (noob, amateur, pro)
@@ -30,9 +33,6 @@
 - [ ] multiplier for playing videos with audio on
 - [ ] pause counting xp when tab is not focused
 - [ ] that "are you sure you want to close the tab" thing
-- [ ] watching the porn on screen earns n points
-- [ ] the longer you watch, the higher your multiplier
-- [ ] occasional engagement checks or points are forfeited
 - [ ] a second small bar showing the time until a new piece of media is chosen
 - [ ] maybe upgrades can go towards how quickly new media is shown
 
