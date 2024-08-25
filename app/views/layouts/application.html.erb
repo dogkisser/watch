@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html data-theme="dark">
-  <head>
-    <title>Watch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-    <%= javascript_include_tag "application" %>
-
-    <%= turbo_include_tags %>
-
-    <% if current_user %>
-      <%= turbo_stream_from current_user.id, "feed", channel: FeedChannel %>
-    <% end %>
-  </head>
-
-  <body>
+<% content_for :content do %>
+  <header>
+    ♌︎
+  </header>
+  <main>
     <%= yield %>
-  </body>
-</html>
+  </main>
+  <footer>
+    (c)um
+  </footer>
+<% end %>
+
+<%= render template: "layouts/base" %>
