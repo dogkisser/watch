@@ -27,3 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Gray's a bitch and can't bothered to configure Rubymine to use out-of-repo project configs
+.idea

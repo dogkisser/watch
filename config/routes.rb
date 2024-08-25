@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "feed#index"
 
-  post "register", to: "users#create"
+  resources :users
+  resource :sessions, only: %i[new create destroy]
 end

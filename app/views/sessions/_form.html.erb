@@ -1,0 +1,16 @@
+<%# locals: (session:) %>
+
+<%= form_with model: session do |f| %>
+  <% if request.path != new_sessions_path && session.invalid? %>
+    <article class="danger">
+      <%= session.errors.full_messages.to_sentence %>
+    </article>
+  <% end %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Login" %>
+<% end %>

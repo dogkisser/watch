@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+.two-col {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'sidebar main';
+    gap: var(--pico-spacing);
+}
+
+aside {
+    grid-area: sidebar;
+    max-width: 420px;
+}
+
+@media screen and (max-width: 1024px) {
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                'main'
+                'sidebar';
+        gap: var(--pico-spacing);
+    }
+
+    aside {
+        max-width: initial;
+    }
+}
+
+/** == Pico unfucking == **/
+
+/**
+ * Pico puts a spinner on everything with aria-busy, but turbo-frames + their interior
+ * forms get aria-busy at the same time. Let's just show the inner most ones
+ */
+[aria-busy]:has(*[aria-busy])::before {
+    display: none;
+}
+
+/**
+ * Pico makes everything that's loading... white-space: nowrap?
+ */
+form[aria-busy=true] {
+    white-space: initial; /* No clue why pico did this. Psychos. */
+}
+
+/**
+ * I just think this is neat. Putting the loading state in a card header if there's something loading inside it.
+ */
+article:has(*[aria-busy]) header::after {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: var(--pico-icon-loading);
+    background-size: 1em auto;
+    background-repeat: no-repeat;
+    content: "";
+    vertical-align: -.125em;
+    float: right;
+    margin: 4px 0;
+}
+
+article *[aria-busy]::before {
+    display: none;
+}
